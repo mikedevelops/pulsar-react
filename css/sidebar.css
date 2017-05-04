@@ -1,0 +1,11 @@
+.sidebar {
+    background-color: #459a8c;
+    border-right: 3px solid #337368;
+    flex-grow: 0;
+    display: flex;
+    padding: 0 25px;
+}
+
+.sidebar .logo {
+    margin: 1rem auto;
+}

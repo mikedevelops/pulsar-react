@@ -1,0 +1,70 @@
+@keyframes pulse {
+    0% { opacity: 1; }
+    25% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.placeholder {
+    animation: pulse 1500ms infinite;
+    will-change: opacity;
+}
+
+.placeholder:not(:last-of-type) {
+    margin-bottom: 1rem;
+}
+
+.placeholder:nth-child(1),
+.message:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+.placeholder:nth-child(2),
+.message:nth-child(2) {
+  animation-delay: 150ms;
+}
+
+.placeholder:nth-child(3),
+.message:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+.placeholder:nth-child(4),
+.message:nth-child(4) {
+  animation-delay: 450ms;
+}
+
+.placeholder:nth-child(5),
+.message:nth-child(5) {
+  animation-delay: 600ms;
+}
+
+.placeholder:nth-child(6),
+.message:nth-child(6) {
+  animation-delay: 750ms;
+}
+
+.placeholder:nth-child(7),
+.message:nth-child(7) {
+  animation-delay: 900ms;
+}
+
+.placeholder:nth-child(8),
+.message:nth-child(8) {
+  animation-delay: 1050ms;
+}
+
+.placeholder:nth-child(9),
+.message:nth-child(9) {
+  animation-delay: 1200ms;
+}
+
+.placeholder:nth-child(10),
+.message:nth-child(10) {
+  animation-delay: 1350ms;
+}
+
+.placeholder:nth-child(11),
+.message:nth-child(11) {
+  animation-delay: 1500ms;
+}

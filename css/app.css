@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+    font-family: 'proxima nova';
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    align-items: stretch;
+    display: flex;
+}
+
+.logo {
+    background-color: white;
+    border-radius: 50%;
+    border: 3px solid white;
+    width: 35px;
+    height: 35px;
+    position: relative;
+}
+
+.logo:after {
+    border: 3px solid #459a8c;
+    border-radius: 50%;
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 12px;
+    width: 12px;
+}
+
+.user {
+    margin-left: auto;
+    padding: 2rem;
+    text-align: right;
+}
+
+.top {
+    display: flex;
+    position: relative;
+}
+
+.top .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.top .logo:after {
+    border-color: #459a8c;
+}
+
+.main {
+    flex-grow: 1;
+}
