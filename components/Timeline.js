@@ -9,8 +9,8 @@ import '../css/timeline.css'
 export default class Timeline extends Component {
     constructor () {
         super()
-        // 1. initialize our component with a state object
-        // 2. let's start with an empty list of messages
+        // initialize our component with a state object
+        // let's start with an empty list of messages
         this.state = {
             messages: []
         }
