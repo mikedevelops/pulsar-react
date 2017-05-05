@@ -16,7 +16,7 @@ export default class Timeline extends Component {
         }
     }
 
-    // React lifecycle method - componentWillMount
+    // React life cycle method - componentWillMount
     // called once prior to the first render call
     componentWillMount () {
         fakeApiCall('/messages', 5000).then(messages => {
@@ -24,23 +24,29 @@ export default class Timeline extends Component {
         }).catch(err => console.log)
     }
 
-    // return our timeline messages as JSX
+    // return our time line messages as JSX
     buildTimelineMessages () {
         // 1. loop through messages
         // 2. return message markup
             // (key, avatar, author, text)
     }
 
-    // build timeline message placeholders
+    // build time line message placeholders
     buildTimelineMessagesPlaceholders (amount) {
         const placeholders = []
         // create placeholders in a loop and
         // push to our placeholders array
         for (let i = 0; i < amount; i ++) {
-            placeholders.push(<div key={i} className="placeholder"></div>)
+            placeholders.push(
+                <div key={i} className="placeholder"></div>
+            )
         }
         // return our placeholders as a wrapper
-        return <div className="placeholders">{ placeholders }</div>
+        return (
+            <div className="placeholders">
+                { placeholders }
+            </div>
+        )
     }
 
     // React method - render our component to the DOM
@@ -50,7 +56,7 @@ export default class Timeline extends Component {
             <div className="timeline">
                 <div className="timeline__messages">
                     { /*
-                        Build timeline messages or render placeholders...
+                        Build time line messages or render placeholders...
                     */}
                 </div>
             </div>
