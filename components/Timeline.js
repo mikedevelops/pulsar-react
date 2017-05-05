@@ -39,7 +39,7 @@ export default class Timeline extends Component {
         for (let i = 0; i < amount; i ++) {
             placeholders.push(<div key={i} className="placeholder"></div>)
         }
-        // return our placeholders ub a wrapper
+        // return our placeholders as a wrapper
         return <div className="placeholders">{ placeholders }</div>
     }
 
