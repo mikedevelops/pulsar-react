@@ -31,7 +31,7 @@ export default class Timeline extends Component {
             // (key, avatar, author, text)
     }
 
-    // build timeline message placehodlers
+    // build timeline message placeholders
     buildTimelineMessagesPlaceholders (amount) {
         const placeholders = []
         // create placeholders in a loop and
