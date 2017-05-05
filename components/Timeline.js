@@ -37,7 +37,7 @@ export default class Timeline extends Component {
         return (
             <div className="timeline">
                 <div className="timeline__messages">
-                    { /* Build timeline messages or render placehooders... */}
+                    { /* Build timeline messages or render placeholders... */}
                 </div>
             </div>
         )
