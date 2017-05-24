@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Timeline from './Timeline'
+import ClickEvents from './ClickEvents'
 import Sidebar from './Sidebar'
 
 import '../css/app.css'
@@ -14,9 +15,11 @@ export default class App extends Component {
                         <div className="logo"/>
                         <div className="user">Michael Smart</div>
                     </div>
-                    <Timeline/>
+                    {/*<Timeline placeholders={5}/>*/}
+                    <ClickEvents />
                 </div>
             </div>
         )
     }
 }
+

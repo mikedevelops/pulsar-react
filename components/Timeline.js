@@ -1,5 +1,6 @@
 // import our libraries and helpers
 import React, { Component } from 'react'
+import PlaceholderContainer from './PlaceholderContainer'
 import { fakeApiCall } from '../helpers/helpers'
 
 // some css imports (a hotly debated topic)
@@ -12,16 +13,26 @@ export default class Timeline extends Component {
         // initialize our component with a state object
         // let's start with an empty list of messages
         this.state = {
-            messages: []
+            messages: [],
+            color: 'green'
         }
+    }
+
+    componentDidUpdate () {
+        console.log('updated')
     }
 
     // React life cycle method - componentWillMount
     // called once prior to the first render call
     componentWillMount () {
-        fakeApiCall('/messages', 5000).then(messages => {
-            // 1. set component state with message data
-        }).catch(err => console.log)
+        setTimeout(() => {
+            this.setState({ color: 'red' })
+        }, 5000)
+
+        // fakeApiCall('/messages', 5000).then(messages => {
+        //     // 1. set component state with message data
+        //     this.setState({ messages })
+        // }).catch(err => console.log)
     }
 
     // return our time line messages as JSX
@@ -29,24 +40,16 @@ export default class Timeline extends Component {
         // 1. loop through messages
         // 2. return message markup
             // (key, avatar, author, text)
-    }
-
-    // build time line message placeholders
-    buildTimelineMessagesPlaceholders (amount) {
-        const placeholders = []
-        // create placeholders in a loop and
-        // push to our placeholders array
-        for (let i = 0; i < amount; i ++) {
-            placeholders.push(
-                <div key={i} className="placeholder"></div>
-            )
-        }
-        // return our placeholders as a wrapper
-        return (
-            <div className="placeholders">
-                { placeholders }
+        return this.state.messages.map(message => (
+            <div key={message.text} className="message">
+                <div className="message__avatar" style={{ backgroundColor: message.avatar }}>
+                    { message.author }
+                </div>
+                <div className="message__text">
+                    { message.text }
+                </div>
             </div>
-        )
+        ))
     }
 
     // React method - render our component to the DOM
@@ -55,9 +58,11 @@ export default class Timeline extends Component {
         return (
             <div className="timeline">
                 <div className="timeline__messages">
-                    { /*
-                        Build time line messages or render placeholders...
-                    */}
+                   {
+                        this.state.messages.length
+                            ? this.buildTimelineMessages()
+                            : <PlaceholderContainer color={this.state.color} amount={50}/>
+                   }
                 </div>
             </div>
         )
